@@ -17,7 +17,7 @@ router.use(express.json());
 //     })
 // });
 
-router.get("/", (req, res, next) => {
+router.get("/", async (req, res, next) => {
   try {
     const shouts = await Shouts.find();
     const messageOfTheDay = process.env.MOTD || 'Hello World!'
