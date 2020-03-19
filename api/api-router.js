@@ -8,7 +8,7 @@ router.use(express.json());
 
 router.get("/", (req, res) => {
   const messageOfTheDay = process.env.MOTD || 'Hello World!'
-  res.status(200).json({ api: "up" });
+  res.status(200).json({ message: messageOfTheDay });
 });
 
 router.get("/shouts", (req, res, next) => {
